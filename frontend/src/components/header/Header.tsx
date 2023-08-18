@@ -2,6 +2,7 @@ import { AppBar, Box, Toolbar, IconButton, Typography, Menu, Container, Avatar, 
 import MenuIcon from '@mui/icons-material/Menu';
 import AdbIcon from '@mui/icons-material/Adb';
 import React from 'react';
+import mainLogo from '../../assets/logo-black.png';
 
 const pages = ['Products', 'Cart', 'About'];
 const settings = ['Profile', 'Account', 'Logout'];
@@ -27,13 +28,11 @@ function Header() {
     setAnchorElUser(null);
   };
 
-
   
   return (
      <AppBar position="static">
       <Container maxWidth="xl">
         <Toolbar disableGutters>
-          <AdbIcon sx={{ display: { xs: 'none', md: 'flex' }, mr: 1 }} />
           <Typography
             variant="h6"
             noWrap
@@ -49,7 +48,12 @@ function Header() {
               textDecoration: 'none',
             }}
           >
-            LOGO
+          <Box 
+            component="img"
+            sx = {{height: 64}}
+            alt="Logo"
+            src={mainLogo}
+          />
           </Typography>
 
           <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
